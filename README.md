@@ -17,7 +17,7 @@
 | 6.14     |          |           |
 
 
-## Chapter 5  
+## Chapter 7
 | Problem | Assigned | Completed |
 |---------|----------|-----------|
 | 7.1     | WE       |           |
