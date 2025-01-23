@@ -7,15 +7,16 @@
 | 6.4     |          | * code in repo barely started 
 | 6.5     | WE       | ✓         |
 | 6.6     |          |           |
-| 6.7     |          |           |
-| 6.8     |          |           |
-| 6.9     |          |           |
+| 6.7     |          | ^^        |
+| 6.8     |          | ^^        |
+| 6.9     |          | ^^        |
 | 6.10     |          |           |
-| 6.11     |          |* see 6.11_proof.pdf |
+| 6.11     |          |^^         |
 | 6.12     |          |           |
 | 6.13     |          |           |
-| 6.14     |          |           |
+| 6.14     |          | ^^        |
 
+^^ done but needs transcribing - see paper copies directory
 
 ## Chapter 7
 | Problem | Assigned | Completed |
