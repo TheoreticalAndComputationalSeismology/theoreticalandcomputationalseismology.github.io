@@ -1,3 +1,7 @@
+## Other TO-DO: 
+
+- [ ] Rename Chapter 6 files with buffer 0 for single digits 
+
 ## Chapter 6      
 | Problem | Assigned | Completed |
 |---------|----------|-----------|
