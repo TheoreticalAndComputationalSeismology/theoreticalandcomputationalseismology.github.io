@@ -12,11 +12,10 @@
 | 6.9     | WE       | ✓         |
 | 6.10     | WE       | ✓         |
 | 6.11     | WE       | ✓         |
-| 6.12     |          |           |
-| 6.13     |          |           |
-| 6.14     |          | ^^        |
+| 6.12     | WE       | Needs updates          |
+| 6.13     | WE       | ✓         |
+| 6.14     | WE       | ✓         |
 
-^^ done but needs transcribing - see paper copies directory
 
 ## Chapter 7
 | Problem | Assigned | Completed |
