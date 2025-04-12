@@ -8,9 +8,9 @@
 ## Build 
 
 ```bash
-jupyter-book build --all tcs
 jupyter-book build tcs/ --builder pdfhtml
-cp tcs/_build/pdf/book.pdf tcs/_build/html/_static/book.pdf
+cp tcs/_build/pdf/book.pdf tcs/book.pdf
+jupyter-book build --all tcs
 ```
 
 Technically you can build the html without the pdf, but the pdf is nice to 

@@ -38,7 +38,7 @@ jobs:
         run: |
           jupyter-book build tcs/ --builder pdfhtml
           cp tcs/_build/pdf/book.pdf tcs/book.pdf
-          jupyter-book build --all tcs
+          jupyter-book build tcs/
           
       # Great extra actions to compose with:
       # Create an artifact of the html output.
