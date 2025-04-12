@@ -66,3 +66,4 @@ jobs:
           branch: gh-pages
           directory: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true  # Force push to overwrite remote branch
