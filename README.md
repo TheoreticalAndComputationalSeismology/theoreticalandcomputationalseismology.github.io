@@ -1,14 +1,20 @@
 # Online solution reference for the book "Theoretical & Computational Seismology"
 
-
 ## Change of ownership edits
 
 - [ ] Update `.github/workflows/deploy_gh_pages.yml` update github repo link
 - [ ] Update `tcs/_config.yml` link to repo.
 
-## Other TO-DO: 
+## Build 
 
-- [ ] Rename Chapter 6 files with buffer 0 for single digits 
+```bash
+jupyter-book build --all tcs
+jupyter-book build tcs/ --builder pdfhtml
+cp tcs/_build/pdf/book.pdf tcs/_build/html/_static/book.pdf
+```
+
+Technically you can build the html without the pdf, but the pdf is nice to 
+have.
 
 ## Chapter 6      
 | Problem | Assigned | Completed |

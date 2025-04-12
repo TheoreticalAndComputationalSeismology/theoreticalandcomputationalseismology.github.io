@@ -28,14 +28,21 @@ jobs:
           cache-environment: true
           post-cleanup: 'all'
 
+      - name: Install dependencies
+        shell: bash -l {0}
+        run: |
+          playwright install --with-deps chromium
+
       - name: Make Docs
         shell: bash -l {0}
         run: |
+          jupyter-book build tcs/ --builder pdfhtml
+          cp tcs/_build/pdf/book.pdf tcs/book.pdf
           jupyter-book build --all tcs
-
+          
       # Great extra actions to compose with:
       # Create an artifact of the html output.
-      - name: Upload Artifact
+      - name: Upload HTML artifact
         uses: actions/upload-artifact@v4
         with:
           name: DocumentationHTML
