@@ -27,14 +27,6 @@ jobs:
             powershell
           cache-environment: true
           post-cleanup: 'all'
-       
-      # To keep Conda activated you have to use 'shell: bash -l {0}' line
-      # To specifiy the shell
-      - name: INFO using bash shell
-        shell: bash -l {0}
-        run: |
-          mamba info
-          mamba list
 
       - name: Make Docs
         shell: bash -l {0}
