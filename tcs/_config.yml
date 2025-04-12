@@ -3,12 +3,14 @@
 
 title: "Theoretical & Computational Seismology: Solutions"
 author: Jeroen Tromp et al.
+copyright: "2025" 
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: auto
+  timeout                   : 30    # The maximum time (in seconds) each notebook cell is allowed to run.
 
 # Define the name of the latex output file for PDF builds
 latex:
