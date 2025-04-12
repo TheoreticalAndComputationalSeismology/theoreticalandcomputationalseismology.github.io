@@ -32,7 +32,7 @@ html:
   use_repository_button: true
   favicon: favicon.png
   extra_files:
-    - "_static/book.pdf"
+    - "book.pdf"
 
 launch_button:
   notebook_interface: classic
