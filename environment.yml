@@ -1,0 +1,9 @@
+name: tcs
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.12
+  - jupyter-book=1.0.4
+  - matplotlib=3.10.1
+  - numpy=2.2.4
+  - scipy=1.15.2

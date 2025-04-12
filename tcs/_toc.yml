@@ -1,0 +1,25 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: Chapter_6_Strong_Methods/6.00
+  sections:
+    - file: Chapter_6_Strong_Methods/6.03
+    - file: Chapter_6_Strong_Methods/6.04
+    - file: Chapter_6_Strong_Methods/6.05
+    - file: Chapter_6_Strong_Methods/6.06
+    - file: Chapter_6_Strong_Methods/6.07
+    - file: Chapter_6_Strong_Methods/6.08
+    - file: Chapter_6_Strong_Methods/6.09
+    - file: Chapter_6_Strong_Methods/6.10
+    - file: Chapter_6_Strong_Methods/6.11
+    - file: Chapter_6_Strong_Methods/6.12
+    - file: Chapter_6_Strong_Methods/6.13
+    - file: Chapter_6_Strong_Methods/6.14
+- file: Chapter_7_Weak_Methods/7.00.md
+  sections:
+    - file: Chapter_7_Weak_Methods/7.01
+    - file: Chapter_7_Weak_Methods/7.03
+    - file: Chapter_7_Weak_Methods/7.04
