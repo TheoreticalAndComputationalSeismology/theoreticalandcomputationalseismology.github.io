@@ -19,5 +19,5 @@ all = [
     "matplotlib~=3.10.1",
     "numpy~=2.2.4",
     "scipy~=1.15.2",
-    "playwright~=1.51.0"
+    "playwright~=1.51.1"
 ]

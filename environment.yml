@@ -2,9 +2,11 @@ name: tcs
 channels:
   - conda-forge
 dependencies:
-  - python>=3.12
+  - python>=3.13
   - jupyter-book=1.0.4
   - matplotlib=3.10.1
   - numpy=2.2.4
   - scipy=1.15.2
-  - playwright=1.51.0
+  - pip
+  - pip:
+    - playwright~=1.51.0
