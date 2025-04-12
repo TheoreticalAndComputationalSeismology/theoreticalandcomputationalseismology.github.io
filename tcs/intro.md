@@ -7,5 +7,7 @@ Science and Engineering (PICSciE).
 
 The book is available [here](https://press.princeton.edu/books/hardcover/9780691267968/theoretical-and-computational-seismology?srsltid=AfmBOopvcYeZzfsQZXwoQYsOS42YjHRRO1JTcj5uKIG27agrDBY0z_1e)
 
+## Chapter Solutions
+
 ```{tableofcontents}
 ```

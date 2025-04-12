@@ -1,6 +1,11 @@
 # Online solution reference for the book "Theoretical & Computational Seismology"
 
 
+## Change of ownership edits
+
+- [ ] Update `.github/workflows/deploy_gh_pages.yml` update github repo link
+- [ ] Update `tcs/_config.yml` link to repo.
+
 ## Other TO-DO: 
 
 - [ ] Rename Chapter 6 files with buffer 0 for single digits 
