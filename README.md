@@ -1,3 +1,6 @@
+# Online solution reference for the book "Theoretical & Computational Seismology"
+
+
 ## Other TO-DO: 
 
 - [ ] Rename Chapter 6 files with buffer 0 for single digits 
