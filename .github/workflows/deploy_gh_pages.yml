@@ -57,6 +57,6 @@ jobs:
           # that.
 
       - name: Push changes
-  uses: actions/push@v2  # Using a newer action
-  with:
-    branch: gh-pages
+        uses: actions/push@v2  # Using a newer action
+        with:
+          branch: gh-pages
