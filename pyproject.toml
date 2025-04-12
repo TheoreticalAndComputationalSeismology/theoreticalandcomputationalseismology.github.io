@@ -1,6 +1,6 @@
 [project]
 name = "theoretical_and_global_seismology"
-version = "0.3.0"
+version = "0.1.0"
 description = "Kokkos implementation of SPECFEM2D code"
 readme = "README.md"
 authors = [

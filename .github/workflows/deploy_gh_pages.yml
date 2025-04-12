@@ -25,7 +25,7 @@ jobs:
           init-shell: >-
             bash
             powershell
-          cache-environment: true
+          cache-environment: false
           post-cleanup: 'all'
 
       - name: Install dependencies
@@ -36,6 +36,7 @@ jobs:
       - name: Make Docs
         shell: bash -l {0}
         run: |
+          micromamba list
           jupyter-book build tcs/ --builder pdfhtml
           cp tcs/_build/pdf/book.pdf tcs/book.pdf
           jupyter-book build tcs/ --builder pdfhtml
