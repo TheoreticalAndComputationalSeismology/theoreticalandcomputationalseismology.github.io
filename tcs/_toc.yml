@@ -4,7 +4,10 @@
 format: jb-book
 root: intro
 chapters:
-- file: Chapter_6_Strong_Methods/6.00
+- file: Chapter_1_Kinematics/1.00.md
+- file: Chapter_2_Dynamics/2.00.md
+- file: Chapter_4_Linearized_EoM/4.00.md
+- file: Chapter_5_Anelasticity_Attenuation/5.00.md
   sections:
     - file: Chapter_6_Strong_Methods/6.01
     - file: Chapter_6_Strong_Methods/6.02
