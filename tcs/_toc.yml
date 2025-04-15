@@ -6,6 +6,8 @@ root: intro
 chapters:
 - file: Chapter_6_Strong_Methods/6.00
   sections:
+    - file: Chapter_6_Strong_Methods/6.01
+    - file: Chapter_6_Strong_Methods/6.02
     - file: Chapter_6_Strong_Methods/6.03
     - file: Chapter_6_Strong_Methods/6.04
     - file: Chapter_6_Strong_Methods/6.05
