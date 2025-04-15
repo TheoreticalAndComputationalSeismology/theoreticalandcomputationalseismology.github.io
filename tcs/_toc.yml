@@ -3,37 +3,42 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: Chapter_1_Kinematics/1.00.md
-- file: Chapter_2_Dynamics/2.00.md
-- file: Chapter_4_Linearized_EoM/4.00.md
-- file: Chapter_5_Anelasticity_Attenuation/5.00.md
-  sections:
-    - file: Chapter_6_Strong_Methods/6.01
-    - file: Chapter_6_Strong_Methods/6.02
-    - file: Chapter_6_Strong_Methods/6.03
-    - file: Chapter_6_Strong_Methods/6.04
-    - file: Chapter_6_Strong_Methods/6.05
-    - file: Chapter_6_Strong_Methods/6.06
-    - file: Chapter_6_Strong_Methods/6.07
-    - file: Chapter_6_Strong_Methods/6.08
-    - file: Chapter_6_Strong_Methods/6.09
-    - file: Chapter_6_Strong_Methods/6.10
-    - file: Chapter_6_Strong_Methods/6.11
-    - file: Chapter_6_Strong_Methods/6.12
-    - file: Chapter_6_Strong_Methods/6.13
-    - file: Chapter_6_Strong_Methods/6.14
-- file: Chapter_7_Weak_Methods/7.00.md
-  sections:
-    - file: Chapter_7_Weak_Methods/7.01
-    - file: Chapter_7_Weak_Methods/7.03
-    - file: Chapter_7_Weak_Methods/7.04
-    - file: Chapter_7_Weak_Methods/7.06
-    - file: Chapter_7_Weak_Methods/7.07
-    - file: Chapter_7_Weak_Methods/7.08
-    - file: Chapter_7_Weak_Methods/7.09
-    - file: Chapter_7_Weak_Methods/7.11
-    - file: Chapter_7_Weak_Methods/7.12
-    - file: Chapter_7_Weak_Methods/7.17
-    - file: Chapter_7_Weak_Methods/7.18
-    - file: Chapter_7_Weak_Methods/7.19
+parts:
+  - caption: Continuum Mechanics
+    chapters:
+    - file: Chapter_1_Kinematics/1.00.md
+    - file: Chapter_2_Dynamics/2.00.md
+  - caption: Seismology
+    - file: Chapter_4_Linearized_EoM/4.00.md
+    - file: Chapter_5_Anelasticity_Attenuation/5.00.md
+  - caption: Forward Problems
+    - file: Chapter_6_Strong_Methods/6.00.md
+      sections:
+        - file: Chapter_6_Strong_Methods/6.01
+        - file: Chapter_6_Strong_Methods/6.02
+        - file: Chapter_6_Strong_Methods/6.03
+        - file: Chapter_6_Strong_Methods/6.04
+        - file: Chapter_6_Strong_Methods/6.05
+        - file: Chapter_6_Strong_Methods/6.06
+        - file: Chapter_6_Strong_Methods/6.07
+        - file: Chapter_6_Strong_Methods/6.08
+        - file: Chapter_6_Strong_Methods/6.09
+        - file: Chapter_6_Strong_Methods/6.10
+        - file: Chapter_6_Strong_Methods/6.11
+        - file: Chapter_6_Strong_Methods/6.12
+        - file: Chapter_6_Strong_Methods/6.13
+        - file: Chapter_6_Strong_Methods/6.14
+    - file: Chapter_7_Weak_Methods/7.00.md
+      sections:
+        - file: Chapter_7_Weak_Methods/7.01
+        - file: Chapter_7_Weak_Methods/7.03
+        - file: Chapter_7_Weak_Methods/7.04
+        - file: Chapter_7_Weak_Methods/7.06
+        - file: Chapter_7_Weak_Methods/7.07
+        - file: Chapter_7_Weak_Methods/7.08
+        - file: Chapter_7_Weak_Methods/7.09
+        - file: Chapter_7_Weak_Methods/7.11
+        - file: Chapter_7_Weak_Methods/7.12
+        - file: Chapter_7_Weak_Methods/7.17
+        - file: Chapter_7_Weak_Methods/7.18
+        - file: Chapter_7_Weak_Methods/7.19
