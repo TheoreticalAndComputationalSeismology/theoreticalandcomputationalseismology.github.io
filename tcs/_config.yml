@@ -41,3 +41,6 @@ launch_button:
   colab_url: "https://colab.research.google.com"
   binderhub_url: "https://mybinder.org"
   thebe: true
+
+interactive:
+  enabled: true
