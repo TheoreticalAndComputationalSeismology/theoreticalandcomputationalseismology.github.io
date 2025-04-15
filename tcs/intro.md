@@ -9,7 +9,7 @@ Press](https://press.princeton.edu/books/hardcover/9780691267968/theoretical-and
 
 Solutions to problems in Chapters 1-5 are static PDFs. Solutions to Chapters 6 and 7 are hosted as Jupyter notebooks. For users who want to edit the code, each 
 notebook hosts the option to be opened in Binder or Google Colab. A static PDF version
-of all Chapter 6 and 7 solutions can also be downloaded {download}`here<book.pdf>`..
+of all Chapter 6 and 7 solutions can also be downloaded {download}`here<book.pdf>`.
 
 ```{tableofcontents}
 ```
