@@ -36,6 +36,7 @@ jobs:
         shell: bash -l {0}
         run: |
           micromamba list
+          jupyter-book clean tcs
           jupyter-book build tcs/ --builder pdfhtml
           cp tcs/_build/pdf/book.pdf tcs/book.pdf
           jupyter-book build tcs/

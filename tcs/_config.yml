@@ -37,7 +37,7 @@ html:
     - "book.pdf"
 
 launch_button:
-  notebook_interface: classic
+  notebook_interface: "classic"
   colab_url: "https://colab.research.google.com"
   binderhub_url: "https://mybinder.org"
   thebe: true
