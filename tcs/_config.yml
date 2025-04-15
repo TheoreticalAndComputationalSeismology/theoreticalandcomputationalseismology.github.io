@@ -1,6 +1,5 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
-
 title: "Theoretical & Computational Seismology: Solutions"
 author: Jeroen Tromp et al.
 copyright: "2025" 
@@ -41,6 +40,17 @@ launch_button:
   colab_url: "https://colab.research.google.com"
   binderhub_url: "https://mybinder.org"
   thebe: true
+
+parse:
+  myst_enable_extensions:
+    - dollarmath
+    - amsmath
+    - deflist
+    - html_admonition
+    - html_image
+    - linkify
+    - substitution
+    - tasklist
 
 interactive:
   enabled: true
