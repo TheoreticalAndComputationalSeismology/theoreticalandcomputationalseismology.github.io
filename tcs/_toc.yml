@@ -35,6 +35,7 @@ parts:
       - file: Chapter_7_Weak_Methods/7.01
       - file: Chapter_7_Weak_Methods/7.03
       - file: Chapter_7_Weak_Methods/7.04
+      - file: Chapter_7_Weak_Methods/7.05
       - file: Chapter_7_Weak_Methods/7.06
       - file: Chapter_7_Weak_Methods/7.07
       - file: Chapter_7_Weak_Methods/7.08
