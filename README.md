@@ -51,8 +51,8 @@ have.
 | 7.11     | WE       | ✓         |
 | 7.12     | WE       | ✓         |
 | 7.13     |          |           |
-| 7.14     |          | * HW6 of my Geo441 (kinda) but I went a bit overkill with classes  |
-| 7.15     |          |           |
+| 7.14     | WE       | ✓         |
+| 7.15     | WE       | ✓         |
 | 7.16     |          |           |
 | 7.17     | WE       | ✓         |
 | 7.18     | WE       | ✓         |
