@@ -13,5 +13,9 @@ Solutions to Chapters 6 and 7 were prepared by Will Eaton. Each solution is cont
 
 This website was created by Lucas Sawade and Will Eaton. Please report or mistakes any issues via [Github](https://github.com/TheoreticalAndComputationalSeismology/theoreticalandcomputationalseismology.github.io/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here) or [email](mailto:weaton@princeton.edu?subject=TCS%20Solutions%20Issue&cc=lsawade@princeton.edu).
 
+### Errata 
+A list of errata for the textbook can be found {download}`here<Errata.pdf>`. Please report any mistakes you find via [email](mailto:jtromp@princeton.edu?subject=TCS%20Errata). 
+
+
 ```{tableofcontents}
 ```
