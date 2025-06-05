@@ -16,6 +16,6 @@ This website was created by Lucas Sawade and Will Eaton. Please report or mistak
 ### Errata 
 A list of errata for the textbook can be found {download}`here<Errata.pdf>`. Please report any mistakes you find via [email](mailto:jtromp@princeton.edu?subject=TCS%20Errata). 
 
-
+### Solutions 
 ```{tableofcontents}
 ```
