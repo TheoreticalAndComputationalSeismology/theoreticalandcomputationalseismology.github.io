@@ -1,0 +1,875 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Problem 6.3 &#8212; Theoretical &amp; Computational Seismology: Solutions</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter_6_Strong_Methods/6.03';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Problem 6.4" href="6.04.html" />
+    <link rel="prev" title="Problem 6.2" href="6.02.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Theoretical & Computational Seismology: Solutions - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Theoretical & Computational Seismology: Solutions - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Theoretical & Computational Seismology
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuum Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_1_Kinematics/1.00.html">1 Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_2_Dynamics/2.00.html">2 Dynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seismology</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_4_Linearized_EoM/4.00.html">4 Linearized Equations of Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_5_Anelasticity_Attenuation/5.00.html">5 Anelasticity and Attenuation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Forward Problems</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="6.00.html">6 Strong Methods</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="6.01.html">Problem 6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.02.html">Problem 6.2</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem 6.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.04.html">Problem 6.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.05.html">Problem 6.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.06.html">Problem 6.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.07.html">Problem 6.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.08.html">Problem 6.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.09.html">Problem 6.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.10.html">Problem 6.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.11.html">Problem 6.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.12.html">Problem 6.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.13.html">Problem 6.13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.14.html">Problem 6.14</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.00.html">7 Weak Methods</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.01.html">Problem 7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.02.html">Problem 7.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.03.html">Problem 7.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.04.html">Problem 7.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.05.html">Problem 7.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.06.html">Problem 7.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.07.html">Problem 7.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.08.html">Problem 7.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.09.html">Problem 7.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.10.html">Problem 7.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.11.html">Problem 7.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.12.html">Problem 7.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.13.html">Problem 7.13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.14.html">Problem 7.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.15.html">Problem 7.15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.16.html">Problem 7.16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.17.html">Problem 7.17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.18.html">Problem 7.18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.19.html">Problem 7.19</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.20.html">Problem 7.20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_7_Weak_Methods/7.21.html">Problem 7.21</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TheoreticalAndComputationalSeismology/theoreticalandcomputationalseismology.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TheoreticalAndComputationalSeismology/theoreticalandcomputationalseismology.github.io/issues/new?title=Issue%20on%20page%20%2FChapter_6_Strong_Methods/6.03.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Chapter_6_Strong_Methods/6.03.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Problem 6.3</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timestepping">Timestepping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-previous-timestep">Dealing with previous timestep?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dirichlet-bc-alpha-0-5">Dirichlet BC - <span class="math notranslate nohighlight">\(\alpha = 0.5\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neumann-bc-alpha-0-5">Neumann BC - <span class="math notranslate nohighlight">\(\alpha = 0.5\)</span></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="problem-6-3">
+<h1>Problem 6.3<a class="headerlink" href="#problem-6-3" title="Link to this heading">#</a></h1>
+<p>The discrete version of the homogeneous wave equation</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\partial_t^2 s = \beta^2\, \partial_x^2 s
+\end{equation*}\]</div>
+<p>is given in Eqn. 6.20 as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+s_j^{n+1} = 2 s^n_j - s^{n-1}_j + \frac{\beta^2 (\Delta t)^2}{(\Delta x)^2} \left( s^n_{j+1} - 2s^n_j + s^n_{j-1} \right)
+\end{equation*}\]</div>
+<p>First let us define some parameters:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span> 
+<span class="kn">from</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="kn">import</span> <span class="n">copy</span>
+
+<span class="n">L</span>     <span class="o">=</span> <span class="mi">100</span>     <span class="c1"># length of domain </span>
+<span class="n">dx</span>    <span class="o">=</span> <span class="mf">0.1</span>     <span class="c1"># spatial discretiation</span>
+<span class="n">beta</span>  <span class="o">=</span> <span class="mi">1</span>       <span class="c1"># constant wavespeed</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next lets define a function that sets the displacement initial condition</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initial condition: </span>
+<span class="k">def</span><span class="w"> </span><span class="nf">apply_initial_condition</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Applies initial condition defined in Eqn 6.21 </span>
+<span class="sd">    x   1D numpy array of spatial positions (array x)</span>
+<span class="sd">    s   1D numpy array of displacement variable (array s)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">50</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">s</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can create our grid of points, x, using a numpy array. Note that using L as our upper bound in the arange function produces an array of values up to L - dx, hence we use L+dx so that the last element of the array has value L:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create array x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="o">+</span><span class="n">dx</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span>
+
+<span class="c1"># Length of array x</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next we create an empty numpy array to hold the displacement values, with the same length as x:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">s_prev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="c1"># Apply initial condition to s: </span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">apply_initial_condition</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+
+<span class="c1"># Plot initial condition</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Initial condition of displacement, s&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">s</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/de6c231e8e8d41d8a8112ebeb5d29f04b815419d8ab3703d215dff08ce93cdc0.png" src="../_images/de6c231e8e8d41d8a8112ebeb5d29f04b815419d8ab3703d215dff08ce93cdc0.png" />
+</div>
+</div>
+<section id="timestepping">
+<h2>Timestepping<a class="headerlink" href="#timestepping" title="Link to this heading">#</a></h2>
+<p>We can define a function that computes the displacement at timestep <span class="math notranslate nohighlight">\(n+1\)</span> based on equation 6.20:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+s_j^{n+1} = 2 s^n_j - s^{n-1}_j + \frac{\beta^2 (\Delta t)^2}{(\Delta x)^2} \left( s^n_{j+1} - 2s^n_j + s^n_{j-1} \right)
+\end{equation*}\]</div>
+<p>Note here that problem 6.3 requires us to investigate the effect of varying <span class="math notranslate nohighlight">\(a\)</span>, where</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\Delta t = \alpha \Delta x / \beta 
+\end{equation*}\]</div>
+<p>which we can rearrange to</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\alpha = \beta \Delta t / \Delta x  
+\end{equation*}\]</div>
+<p>such that we can write the timestepping condition equation in terms of <span class="math notranslate nohighlight">\(\alpha\)</span> as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+s_j^{n+1} = 2 s^n_j - s^{n-1}_j + \alpha^2 \left( s^n_{j+1} - 2s^n_j + s^n_{j-1} \right)
+\end{equation*}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">step_in_time</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">s_prev</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">use_Dirichlet_bc</span><span class="p">):</span> 
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function computes one timestep of s and applies the boundary </span>
+<span class="sd">    condition. </span>
+<span class="sd">    Inputs: </span>
+<span class="sd">    s       </span>
+<span class="sd">       1D np array of displacement variable at timestep n</span>
+<span class="sd">    s_prev  </span>
+<span class="sd">       1D np array of displacement at timestep n-1</span>
+<span class="sd">    alpha   </span>
+<span class="sd">       float value defined in problem </span>
+<span class="sd">    use_Dirichlet_bc   </span>
+<span class="sd">       boolean value, if True then applies Dirichlet bc</span>
+<span class="sd">                      if False then applies Neumann bc</span>
+<span class="sd">    </span>
+<span class="sd">    Outputs: </span>
+<span class="sd">    s_new</span>
+<span class="sd">       updated displacement at n+1 </span>
+<span class="sd">    s</span>
+<span class="sd">       displacement at time n which will be used as &#39;s_prev in next timestep&#39;          </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># Compute the first two terms of the equation</span>
+    <span class="c1"># this applies to all elements in the array</span>
+    <span class="n">s_new</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">s</span> <span class="o">-</span> <span class="n">s_prev</span>
+    
+    <span class="c1"># Now we add the 3rd term, which affects all elements of the</span>
+    <span class="c1"># array except for the first and last elements (boundaries)</span>
+    <span class="n">s_new</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    
+    
+    <span class="c1"># Apply boundary condition</span>
+    <span class="k">if</span> <span class="n">use_Dirichlet_bc</span><span class="p">:</span> 
+        <span class="n">s_new</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="o">=</span> <span class="mi">0</span> 
+        <span class="n">s_new</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="c1"># Neumann boundary condition</span>
+        <span class="n">s_new</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="o">=</span> <span class="n">s_new</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">s_new</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">s_new</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">s_new</span><span class="p">,</span> <span class="n">s</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<section id="dealing-with-previous-timestep">
+<h3>Dealing with previous timestep?<a class="headerlink" href="#dealing-with-previous-timestep" title="Link to this heading">#</a></h3>
+<p>At time = 0, what should be in our ‘previous timestep’ array of displacement? Lets just assume that the system was in the same state as at the initial condition, so <code class="docutils literal notranslate"><span class="pre">s_prev</span> <span class="pre">=</span> <span class="pre">s</span></code>.</p>
+</section>
+</section>
+<section id="dirichlet-bc-alpha-0-5">
+<h2>Dirichlet BC - <span class="math notranslate nohighlight">\(\alpha = 0.5\)</span><a class="headerlink" href="#dirichlet-bc-alpha-0-5" title="Link to this heading">#</a></h2>
+<p>Lets start with <span class="math notranslate nohighlight">\(\alpha = 0.5\)</span> and see what happens. To see how the system evolves, we will loop over 2000 timesteps, and plot the system at every 200th iteration</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To begin with let us assume that the initial condition holds for any time before 0, such that s_prev</span>
+<span class="c1"># is the same as s </span>
+<span class="c1"># Lets also ensure our boundary condition is applied</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">apply_initial_condition</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+<span class="n">s_prev</span> <span class="o">=</span> <span class="n">s</span> 
+
+<span class="c1"># Simulation parameters: </span>
+<span class="n">alpha</span>         <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">use_dirichlet</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">ntimesteps</span>    <span class="o">=</span> <span class="mi">2000</span>
+
+<span class="c1"># Plotting</span>
+<span class="n">nplots</span> <span class="o">=</span> <span class="mi">10</span> 
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nplots</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">19</span><span class="p">),</span> 
+                       <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">iax</span> <span class="o">=</span> <span class="mi">0</span> 
+
+<span class="c1"># Loop over the timesteps</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ntimesteps</span><span class="p">):</span>
+    <span class="n">s</span><span class="p">,</span> <span class="n">s_prev</span> <span class="o">=</span> <span class="n">step_in_time</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">s_prev</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> 
+                             <span class="n">use_Dirichlet_bc</span><span class="o">=</span><span class="n">use_dirichlet</span><span class="p">)</span>
+    
+    <span class="c1"># Plot every 200th timestep</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">200</span> == 0:         
+        <span class="c1"># Plot the wave</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">iax</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+        
+        <span class="c1"># Add some annotations</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">iax</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Iteration: </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># Set plot limits for each axis:</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">iax</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">iax</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span><span class="mf">1.2</span><span class="p">])</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">iax</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Displacement&quot;</span><span class="p">)</span>
+        <span class="n">iax</span> <span class="o">+=</span><span class="mi">1</span> 
+
+<span class="n">ax</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fe96cd8c8204b84ec856ad8533706c9ee130518271f010909a36ade40b537e61.png" src="../_images/fe96cd8c8204b84ec856ad8533706c9ee130518271f010909a36ade40b537e61.png" />
+</div>
+</div>
+<p>We notice a few key things:</p>
+<p>(1) The reflection at the boundary causes a change in the polarity of the waves<br />
+(2) The wavefield is smooth and well resolved<br />
+(3) Energy is well-conserved within the system</p>
+<p>If you try to run this code with <span class="math notranslate nohighlight">\(\alpha = 1.5\)</span> you will get a runtime error due to numerical overflow. This is because the system is unstable and the values are growing through time.</p>
+<p>You should find that <span class="math notranslate nohighlight">\(\alpha = 1\)</span> is the cutoff for this behaviour. In the code below, you can try experimenting with the precision of the alpha being used. For example, what if alpha is 1.0001 or 1.00001? How many timesteps occur before the system blows up?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To begin with let us assume that the initial condition holds for any time before 0, such that s_prev</span>
+<span class="c1"># is the same as s </span>
+<span class="c1"># Lets also ensure our boundary condition is applied</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">apply_initial_condition</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+<span class="n">s_prev</span> <span class="o">=</span> <span class="n">s</span> 
+
+<span class="c1"># Simulation parameters: </span>
+<span class="n">alpha</span>         <span class="o">=</span> <span class="mf">1.0001</span>
+<span class="n">use_dirichlet</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">ntimesteps</span>    <span class="o">=</span> <span class="mi">2000</span>
+
+<span class="c1"># Plotting</span>
+<span class="n">nplots</span> <span class="o">=</span> <span class="mi">10</span> 
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nplots</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">19</span><span class="p">),</span> 
+                       <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">iax</span> <span class="o">=</span> <span class="mi">0</span> 
+
+<span class="c1"># Loop over the timesteps</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ntimesteps</span><span class="p">):</span>
+    <span class="n">s</span><span class="p">,</span> <span class="n">s_prev</span> <span class="o">=</span> <span class="n">step_in_time</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">s_prev</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> 
+                             <span class="n">use_Dirichlet_bc</span><span class="o">=</span><span class="n">use_dirichlet</span><span class="p">)</span>
+    
+    <span class="c1"># Plot every 200th timestep</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">200</span> == 0:         
+        <span class="c1"># Plot the wave</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">iax</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+        
+        <span class="c1"># Add some annotations</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">iax</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Iteration: </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># Set plot limits for each axis:</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">iax</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">iax</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span><span class="mf">1.2</span><span class="p">])</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">iax</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Displacement&quot;</span><span class="p">)</span>
+        
+        <span class="n">iax</span> <span class="o">+=</span><span class="mi">1</span> 
+
+        
+<span class="n">ax</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/54b2dba3d4883ba724bfaec6f81df4ba54c9c40a6c80cb0e121f1a195e16408e.png" src="../_images/54b2dba3d4883ba724bfaec6f81df4ba54c9c40a6c80cb0e121f1a195e16408e.png" />
+</div>
+</div>
+</section>
+<section id="neumann-bc-alpha-0-5">
+<h2>Neumann BC - <span class="math notranslate nohighlight">\(\alpha = 0.5\)</span><a class="headerlink" href="#neumann-bc-alpha-0-5" title="Link to this heading">#</a></h2>
+<p>Lets now look at with <span class="math notranslate nohighlight">\(\alpha = 0.5\)</span> for Neumann boundary condition.</p>
+<p>The major observed difference is the change in polarity observed above with the Dirichlet condition is no longer observed. Instead of the end point being ‘fixed’ as above, the end point is ‘free’ to move around, as observed at iteration 1000. Note that in the Dirichlet condition the end points never have a non-zero displacement (as is the nature of their boundary condition).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To begin with let us assume that the initial condition holds for any time before 0, such that s_prev</span>
+<span class="c1"># is the same as s </span>
+<span class="c1"># Lets also ensure our boundary condition is applied</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">apply_initial_condition</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+<span class="n">s_prev</span> <span class="o">=</span> <span class="n">s</span> 
+
+<span class="c1"># Simulation parameters: </span>
+<span class="n">alpha</span>         <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">use_dirichlet</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">ntimesteps</span>    <span class="o">=</span> <span class="mi">2000</span>
+
+<span class="c1"># Plotting</span>
+<span class="n">nplots</span> <span class="o">=</span> <span class="mi">10</span> 
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nplots</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">19</span><span class="p">),</span> 
+                       <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">iax</span> <span class="o">=</span> <span class="mi">0</span> 
+
+<span class="c1"># Loop over the timesteps</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ntimesteps</span><span class="p">):</span>
+    <span class="n">s</span><span class="p">,</span> <span class="n">s_prev</span> <span class="o">=</span> <span class="n">step_in_time</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">s_prev</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">use_Dirichlet_bc</span><span class="o">=</span><span class="n">use_dirichlet</span><span class="p">)</span>
+
+    <span class="c1"># Plot every 200th timestep</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">200</span> == 0: 
+        
+        <span class="c1"># Plot the wave</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">iax</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+        
+        <span class="c1"># Add some annotations</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">iax</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Iteration: </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># Set plot limits for each axis:</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">iax</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">iax</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span><span class="mf">1.2</span><span class="p">])</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">iax</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Displacement&quot;</span><span class="p">)</span>        
+        <span class="n">iax</span> <span class="o">+=</span><span class="mi">1</span> 
+
+<span class="n">ax</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/af7e654c73a0da6d7d5f61a5153a5fafd2b53fa9096850dec0253e9cd0b1bd3b.png" src="../_images/af7e654c73a0da6d7d5f61a5153a5fafd2b53fa9096850dec0253e9cd0b1bd3b.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Chapter_6_Strong_Methods"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="6.02.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Problem 6.2</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="6.04.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Problem 6.4</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timestepping">Timestepping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-previous-timestep">Dealing with previous timestep?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dirichlet-bc-alpha-0-5">Dirichlet BC - <span class="math notranslate nohighlight">\(\alpha = 0.5\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neumann-bc-alpha-0-5">Neumann BC - <span class="math notranslate nohighlight">\(\alpha = 0.5\)</span></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jeroen Tromp et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
