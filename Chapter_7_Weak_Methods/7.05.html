@@ -1,0 +1,820 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Problem 7.5 &#8212; Theoretical &amp; Computational Seismology: Solutions</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter_7_Weak_Methods/7.05';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Problem 7.6" href="7.06.html" />
+    <link rel="prev" title="Problem 7.4" href="7.04.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Theoretical & Computational Seismology: Solutions - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Theoretical & Computational Seismology: Solutions - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Theoretical & Computational Seismology
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuum Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_1_Kinematics/1.00.html">1 Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_2_Dynamics/2.00.html">2 Dynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seismology</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_4_Linearized_EoM/4.00.html">4 Linearized Equations of Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_5_Anelasticity_Attenuation/5.00.html">5 Anelasticity and Attenuation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Forward Problems</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_6_Strong_Methods/6.00.html">6 Strong Methods</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_6_Strong_Methods/6.01.html">Problem 6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_6_Strong_Methods/6.02.html">Problem 6.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_6_Strong_Methods/6.03.html">Problem 6.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_6_Strong_Methods/6.04.html">Problem 6.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_6_Strong_Methods/6.05.html">Problem 6.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_6_Strong_Methods/6.06.html">Problem 6.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_6_Strong_Methods/6.07.html">Problem 6.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_6_Strong_Methods/6.08.html">Problem 6.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_6_Strong_Methods/6.09.html">Problem 6.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_6_Strong_Methods/6.10.html">Problem 6.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_6_Strong_Methods/6.11.html">Problem 6.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_6_Strong_Methods/6.12.html">Problem 6.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_6_Strong_Methods/6.13.html">Problem 6.13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_6_Strong_Methods/6.14.html">Problem 6.14</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="7.00.html">7 Weak Methods</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="7.01.html">Problem 7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.02.html">Problem 7.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.03.html">Problem 7.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.04.html">Problem 7.4</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem 7.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.06.html">Problem 7.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.07.html">Problem 7.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.08.html">Problem 7.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.09.html">Problem 7.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.10.html">Problem 7.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.11.html">Problem 7.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.12.html">Problem 7.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.13.html">Problem 7.13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.14.html">Problem 7.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.15.html">Problem 7.15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.16.html">Problem 7.16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.17.html">Problem 7.17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.18.html">Problem 7.18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.19.html">Problem 7.19</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.20.html">Problem 7.20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.21.html">Problem 7.21</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TheoreticalAndComputationalSeismology/theoreticalandcomputationalseismology.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TheoreticalAndComputationalSeismology/theoreticalandcomputationalseismology.github.io/issues/new?title=Issue%20on%20page%20%2FChapter_7_Weak_Methods/7.05.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Chapter_7_Weak_Methods/7.05.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Problem 7.5</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusivity-matrix">Diffusivity matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forcing-matrix">Forcing matrix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#point-x-1">Point <span class="math notranslate nohighlight">\(x_1\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-points-a-2-n">Internal points (A = 2, … n)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-1-h-0">Case 1: h = 0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-2-h-0">Case 2: h = 0</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="problem-7-5">
+<h1>Problem 7.5<a class="headerlink" href="#problem-7-5" title="Link to this heading">#</a></h1>
+<p>The domain contains <span class="math notranslate nohighlight">\(n+1\)</span> nodes. However, final node (<span class="math notranslate nohighlight">\(n+1\)</span>) has its temperature fixed at <span class="math notranslate nohighlight">\(\theta_1\)</span> due to the boundary condition. As such, we do not need to ever solve for the temperature at this point.</p>
+<section id="diffusivity-matrix">
+<h2>Diffusivity matrix<a class="headerlink" href="#diffusivity-matrix" title="Link to this heading">#</a></h2>
+<p>The diffusivity matrix, <span class="math notranslate nohighlight">\(\mathbf{K}\)</span>, is therefore <span class="math notranslate nohighlight">\((n \times n)\)</span> and for constant grid spacing <span class="math notranslate nohighlight">\(\Delta x\)</span> has the following components:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+K_{1\,1} &amp;= 1/\Delta x \\  
+K_{A\,A} &amp;= 1/\Delta x_{A-1} + 1/\Delta x_{A} \\
+         &amp;= 2 / \Delta x \\
+K_{A-1\,A} = K_{A\,A-1} &amp;= - 1/\Delta x_{A-1} \\
+         &amp;= -1 / \Delta x \\ 
+\end{align*}\]</div>
+<p>or in matrix format</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\mathbf{K} = \frac{1}{\Delta x} \begin{bmatrix}
+    1 &amp; -1 &amp;    &amp;    &amp;       \\
+   -1 &amp;  2 &amp; -1 &amp;    &amp;       \\
+      &amp; -1 &amp;  2 &amp; -1 &amp;      \\
+      &amp;    &amp; \ddots &amp;  \ddots &amp; \ddots&amp;  \\
+      &amp;    &amp;    &amp; -1 &amp;  2 &amp; -1   \\
+      &amp;    &amp;    &amp; &amp;-1 &amp;  2 &amp; -1   \\
+      &amp;    &amp;    &amp;    &amp; &amp; -1 &amp;  2   \\
+\end{bmatrix}
+\end{equation*}\]</div>
+</section>
+<section id="forcing-matrix">
+<h2>Forcing matrix<a class="headerlink" href="#forcing-matrix" title="Link to this heading">#</a></h2>
+<p>The forcing matrix components are defined as follows:</p>
+<section id="point-x-1">
+<h3>Point <span class="math notranslate nohighlight">\(x_1\)</span><a class="headerlink" href="#point-x-1" title="Link to this heading">#</a></h3>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    F_1 = \frac{1}{\Delta x_1} \int_{x_1}^{x_2} (x_2 - x) \, h(x) \, \mathrm{d}x + H_0
+\end{equation*}\]</div>
+<p>in the case that <span class="math notranslate nohighlight">\(h=0\)</span> this is simply</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    F_1 =  H_0\quad. 
+\end{equation*}\]</div>
+<p>In the case that <span class="math notranslate nohighlight">\(h = 1\)</span> this is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    F_1 &amp;= \frac{1}{\Delta x_1} \int_{x_1}^{x_2} (x_2 - x) \, \mathrm{d}x + H_0 \\
+        &amp;= \frac{1}{2 \Delta x_1} (x_2 - x_1)^2  + H_0 \\ 
+        &amp;= \frac{1}{2} (x_2 - x_1)  + H_0 \\ 
+        &amp;= \frac{1}{2} \Delta x_1  + H_0
+\end{align*}\]</div>
+</section>
+<section id="internal-points-a-2-n">
+<h3>Internal points (A = 2, … n)<a class="headerlink" href="#internal-points-a-2-n" title="Link to this heading">#</a></h3>
+<p>For all points except the last (<span class="math notranslate nohighlight">\(2, ... n-1\)</span>), the forcing is given by</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    F_A = \frac{1}{\Delta x_{A-1} } \int_{x_{A-1}}^{x_A} (x - x_{A-1})\, h(x)\, \mathrm{d}x \:+\: 
+     \frac{1}{\Delta x_{A} } \int_{x_{A}}^{x_{A+1}} (x_{A+1} - x)\, h(x)\, \mathrm{d}x
+\end{equation*}\]</div>
+<p>When <span class="math notranslate nohighlight">\(h=0\)</span> this produces <span class="math notranslate nohighlight">\(F_A = 0\)</span>. When <span class="math notranslate nohighlight">\(h=1\)</span> this produces</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    F_1 &amp;= \frac{1}{2 \Delta x_{A-1}} \left( x_A - x_{A-1} \right)^2  + \frac{1}{2 \Delta x_A} \left( x_{A+1} - x_{A} \right)^2  \\
+     &amp;= \frac{1}{2} \Delta x_{A-1}   + \frac{1}{2} \Delta x_{A}  \\
+\end{align*}\]</div>
+<p>which for a constant <span class="math notranslate nohighlight">\(\Delta x\)</span> is simply equal to <span class="math notranslate nohighlight">\(\Delta x\)</span> .</p>
+<p>The <span class="math notranslate nohighlight">\(n\)</span>’th node contains contributions from the last element and <span class="math notranslate nohighlight">\(\theta_1\)</span>, given in 7.54 as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+F_n = \frac{1}{\Delta x_{n-1}} \int_{x_{n-1}}^{x_n} (x - x_{n-1})\, h(x) \: \mathrm{d}x + \frac{1}{\Delta x_{n}} \int_{x_{n}}^{x_{n+1}} (x_{n+1} - x)\, h(x) \: \mathrm{d}x \: + \frac{\theta_1}{\Delta x_n} \quad. 
+\end{equation*}\]</div>
+<p>For the case that <span class="math notranslate nohighlight">\(h=0\)</span> this reduces to</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+F_n =  \frac{\theta_1}{\Delta x_n}, 
+\end{equation*}\]</div>
+<p>where as for <span class="math notranslate nohighlight">\(h(x) = 1\)</span> it is</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+F_n = \frac{\Delta x_{n-1}}{2} + \frac{\Delta x_{n}}{2} + \frac{\theta_1}{\Delta x_n}, 
+\end{equation*}\]</div>
+</section>
+</section>
+<section id="case-1-h-0">
+<h2>Case 1: h = 0<a class="headerlink" href="#case-1-h-0" title="Link to this heading">#</a></h2>
+<p>For 10 elements (<span class="math notranslate nohighlight">\(n=10\)</span>) the equations then becomes</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\frac{1}{\Delta x}
+\begin{bmatrix}
+    1 &amp; -1 &amp;    &amp;    &amp;    &amp;    &amp;    &amp; &amp; &amp;  \\
+   -1 &amp;  2 &amp; -1 &amp;    &amp;    &amp;    &amp;    &amp; &amp; &amp;    \\
+      &amp; -1 &amp;  2 &amp; -1 &amp;    &amp;    &amp;    &amp; &amp; &amp;    \\
+      &amp;    &amp; -1 &amp;  2 &amp; -1 &amp;    &amp;    &amp; &amp; &amp;    \\
+      &amp;    &amp;    &amp; -1 &amp;  2 &amp; -1 &amp;    &amp; &amp; &amp;  \\
+      &amp;    &amp;    &amp;    &amp; -1 &amp;  2 &amp; -1 &amp;    &amp; &amp;  \\
+      &amp;    &amp;    &amp;    &amp;    &amp; -1 &amp;  2 &amp; -1 &amp; &amp; \\ 
+      &amp;    &amp;    &amp;    &amp;    &amp;    &amp; -1 &amp;  2 &amp; -1 &amp;    &amp; \\ 
+      &amp;    &amp;    &amp;    &amp;    &amp;    &amp;    &amp; -1 &amp;  2 &amp; -1 &amp; \\ 
+      &amp;    &amp;    &amp;    &amp;    &amp;    &amp;    &amp;    &amp; -1 &amp;  2 &amp; -1 \\
+\end{bmatrix} \mathbf{\Theta} = 
+\begin{bmatrix}
+    H_0  \\ 
+    0  \\
+    0   \\
+    0   \\
+    0   \\
+    0   \\
+    0   \\
+    0   \\
+    0   \\
+    \frac{\theta_1}{\Delta x}  
+\end{bmatrix} 
+\end{equation*}\]</div>
+<p>since <span class="math notranslate nohighlight">\(H_0\)</span> = 1</p>
+<p>The solution is then:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span> 
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span> 
+
+<span class="n">L</span> <span class="o">=</span> <span class="mi">1</span>     <span class="c1"># Domain 0 to L</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>    <span class="c1"># Number of elements</span>
+
+<span class="c1"># Boundary conditions</span>
+<span class="n">theta_1</span> <span class="o">=</span> <span class="mi">1</span> 
+<span class="n">H0</span>      <span class="o">=</span> <span class="mi">1</span> 
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">dx</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Delta x in each element</span>
+
+<span class="c1"># Create matrix K</span>
+<span class="n">diag</span>     <span class="o">=</span>  <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>     <span class="c1"># Main diagonal</span>
+<span class="n">off_diag</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Off-diagonals</span>
+<span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">diag</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">off_diag</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">off_diag</span><span class="p">,</span> <span class="n">k</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Edit the first diagonal element</span>
+<span class="n">K</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>   <span class="o">=</span> <span class="mi">1</span>  
+
+<span class="c1"># Remember division by dx for K matrix</span>
+<span class="n">K</span> <span class="o">=</span> <span class="n">K</span><span class="o">/</span><span class="n">dx</span>
+
+<span class="c1"># Create vector f: </span>
+
+<span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">F</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">H0</span>
+<span class="n">F</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">theta_1</span> <span class="o">/</span> <span class="n">dx</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+
+<span class="c1"># Compute inverse matrix K^-1 </span>
+<span class="n">Kinv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
+
+<span class="c1"># Compute theta </span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">Kinv</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+
+<span class="c1"># Theta array for whole domain contains the n+1 point also: </span>
+<span class="n">total_theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">total_theta</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">theta</span>
+<span class="n">total_theta</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">theta_1</span>
+
+
+
+<span class="c1"># Plot for comparison</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="c1"># Plot FEM </span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">total_theta</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot analytical</span>
+<span class="n">analytical</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">H0</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">analytical</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;FEM&#39;</span><span class="p">,</span> <span class="s1">&#39;Analytical&#39;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/44869a680ba9aa5f2da8d7cd1a8a41ec9abd40d69a97de06155a7a74eed50981.png" src="../_images/44869a680ba9aa5f2da8d7cd1a8a41ec9abd40d69a97de06155a7a74eed50981.png" />
+</div>
+</div>
+</section>
+<section id="case-2-h-0">
+<h2>Case 2: h = 0<a class="headerlink" href="#case-2-h-0" title="Link to this heading">#</a></h2>
+<p>Now lets look at the case when <span class="math notranslate nohighlight">\(h = 1\)</span>. Remember that <span class="math notranslate nohighlight">\(h\)</span> doesn’t affect the diffusivity matrix so all we need to do is compute the new <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> vector</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new F vector </span>
+<span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">inode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+    <span class="k">if</span> <span class="n">inode</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="n">F</span><span class="p">[</span><span class="n">inode</span><span class="p">]</span> <span class="o">=</span> <span class="n">H0</span> <span class="o">+</span> <span class="n">dx</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span>  
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="n">F</span><span class="p">[</span><span class="n">inode</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">dx</span><span class="p">[</span><span class="n">inode</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dx</span><span class="p">[</span><span class="n">inode</span><span class="p">])</span>
+
+        
+    <span class="c1"># The last node (n) also gets an extra contribution </span>
+    <span class="c1"># note the python indexing from 0 here means its &#39;n-1&#39;</span>
+    <span class="k">if</span> <span class="n">inode</span> <span class="o">==</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span> 
+        <span class="n">F</span><span class="p">[</span><span class="n">inode</span><span class="p">]</span> <span class="o">+=</span> <span class="n">theta_1</span><span class="o">/</span><span class="n">dx</span><span class="p">[</span><span class="n">inode</span><span class="p">]</span>
+        
+
+<span class="c1"># Now we can compute the temperature field: </span>
+<span class="c1"># Compute theta </span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">Kinv</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+
+<span class="c1"># Theta array for whole domain contains the n+1 point also: </span>
+<span class="n">total_theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">total_theta</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">theta</span>
+<span class="n">total_theta</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">theta_1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let us compare against an analytical solution (7.19) for <span class="math notranslate nohighlight">\(h(x)=1\)</span> which ends up being</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \theta(x) = \theta_1 + (1-x) H_0 + \frac{1}{2}(1-x^2) \quad.
+\end{equation*}\]</div>
+<p>Note how the internal heating contributes an extra quadratic term compared to the case when <span class="math notranslate nohighlight">\(h=0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot for comparison</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="c1"># Plot FEM </span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">total_theta</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot analytical</span>
+<span class="n">analytical</span> <span class="o">=</span> <span class="n">theta_1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">H0</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">analytical</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;FEM&#39;</span><span class="p">,</span> <span class="s1">&#39;Analytical&#39;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b0b601d98c229f9f5a6881521559913380d08689cbfa623b92aeb5f106a24710.png" src="../_images/b0b601d98c229f9f5a6881521559913380d08689cbfa623b92aeb5f106a24710.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Chapter_7_Weak_Methods"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="7.04.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Problem 7.4</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="7.06.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Problem 7.6</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diffusivity-matrix">Diffusivity matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forcing-matrix">Forcing matrix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#point-x-1">Point <span class="math notranslate nohighlight">\(x_1\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-points-a-2-n">Internal points (A = 2, … n)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-1-h-0">Case 1: h = 0</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-2-h-0">Case 2: h = 0</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jeroen Tromp et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
